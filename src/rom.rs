@@ -1,8 +1,18 @@
-pub fn open_rom(path: &str) {
-    println!("Opening ROM at {}", path);
+use opcodes::Opcode;
+
+pub struct Rom {
+    pub size: u16,
 }
-pub fn read_instruction() -> u16 {
-    15
+
+impl Rom {
+    pub fn read_next_instruction(&self) -> Opcode {
+        Opcode::ClearScreen
+    }
+}
+
+pub fn open_rom(path: &str) -> Rom {
+    println!("Opening ROM at {}", path);
+    Rom { size : 10 }
 }
 
 #[cfg(test)]

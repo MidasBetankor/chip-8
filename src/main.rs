@@ -1,11 +1,12 @@
-mod processor;
 mod rom;
+mod processor;
+mod opcodes;
 
-use rom::open_rom;
+use rom::Rom;
 
 fn main() {
-    println!("Works!");
-    open_rom("BRIX");
-    rom::read_instruction();
-    processor::process_instruction(15);
+    println!("Boot!");
+    let game: Rom = rom::open_rom("BRIX");
+    processor::process_rom(game);
+    println!("YOU DIED");
 }

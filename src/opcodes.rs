@@ -1,5 +1,6 @@
-pub fn clear_screen() {
-    println!("Cleared screen");
+pub enum Opcode {
+    ClearScreen = 0x00E0,
+    ReturnSubroutine = 0x00EE
 }
 
 #[cfg(test)]
