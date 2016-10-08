@@ -2,11 +2,13 @@ mod rom;
 mod processor;
 mod opcodes;
 
+use processor::Chip;
 use rom::Rom;
 
 fn main() {
     println!("Boot!");
-    let game: Rom = rom::open_rom("BRIX");
-    processor::process_rom(game);
+    let mut game: Rom = Rom::open_rom("roms/BRIX");
+    Chip::process_rom(&mut game);
+
     println!("YOU DIED");
 }

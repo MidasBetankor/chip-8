@@ -1,6 +1,8 @@
-pub enum Opcode {
-    ClearScreen = 0x00E0,
-    ReturnSubroutine = 0x00EE
+pub struct Opcode {
+    pub first_byte: u8,
+    pub second_byte: u8,
+    pub third_byte: u8,
+    pub fourth_byte: u8,
 }
 
 #[cfg(test)]

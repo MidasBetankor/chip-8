@@ -8,3 +8,5 @@ Cargo.lock
 
 # Custom stuff
 *.stackdump
+src/tmp*
+roms/
